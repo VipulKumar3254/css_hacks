@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+}
+body{
+         
+    background-color: black;
+    display: flex;
+    color:white;
+
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+
+}
+
+
+a{
+    text-decoration: none;
+    padding:15px 30px;
+    color:#00aeff;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid #00aeff;
+    position:relative;
+    overflow: hidden;
+
+}
+
+.wave{
+    position:absolute;
+    /* top:calc(100%+240px); */
+
+    top:calc(346%);
+    left:0;
+    height: 100%;
+    width: 100%;
+    transition: all .5s ease-in-out;
+    z-index: -1;
+
+
+
+
+}
+
+.wave::before{
+    content:"";
+    width: 100%;
+    position: absolute;
+    height: 240px;
+    top:-240px;
+    background-image: url("./wave.png");
+    animation:wavy .5s linear infinite;
+}
+
+@keyframes wavy{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 900px;
+
+    }
+    
+}
+a:hover .wave{
+    top:0;
+
+
+}
+a:hover{
+    color:white;
+}
